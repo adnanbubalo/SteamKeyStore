@@ -1,0 +1,38 @@
+services:
+    steamkeystore-sql:
+        image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+        restart: unless-stopped
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=QWE1kjl32!
+            - MSQL_PID=Developer
+        ports:
+            - 1401:1433
+        expose:
+            - 1433
+        networks:
+            - steamkeystore-net
+        volumes:
+            - ./sql-scripts:/scripts
+        command:
+            - /bin/bash
+            - -c
+            - |
+              # Start SQL Server
+              /opt/mssql/bin/sqlservr &
+              sleep 15
+
+              # Create the initial database
+              /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P QWE1kjl32! -Q "CREATE DATABASE SteamKeyStoreDB;"
+              /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P QWE1kjl32! -i /scripts/init.sql
+              /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P QWE1kjl32! -i /scripts/population.sql
+
+              # Keep the container running
+              wait $(pidof sqlservr)
+        
+
+networks:
+    steamkeystore-net:
+        driver: bridge
+volumes:
+    sql-data: 
