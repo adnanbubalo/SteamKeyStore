@@ -1,6 +1,6 @@
 ﻿namespace SteamKeyStore.Model.Models;
 
-public partial class OrderItemKey
+public class OrderItemKey
 {
     public int OrderItemKeyId { get; set; }
 

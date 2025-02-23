@@ -1,6 +1,6 @@
 ﻿namespace SteamKeyStore.Model.Models;
 
-public partial class User
+public class User
 {
     public int Id { get; set; }
 
@@ -8,7 +8,7 @@ public partial class User
 
     public string Email { get; set; } = null!;
 
-    public string Role { get; set; } = null!;
+    public UserRole Role { get; set; }
 
     public string PasswordHash { get; set; } = null!;
 
@@ -26,4 +26,10 @@ public partial class User
 
     public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
     */
+}
+public enum UserRole
+{
+    ADMIN,
+    CREATOR,
+    CUSTOMER
 }

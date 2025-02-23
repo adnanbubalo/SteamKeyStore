@@ -1,10 +1,10 @@
 ﻿namespace SteamKeyStore.Model.Models;
 
-public partial class Product
+public class Product
 {
     public int Id { get; set; }
 
-    public string Type { get; set; } = null!;
+    public ProductType Type { get; set; }
 
     public string Title { get; set; } = null!;
 
@@ -40,4 +40,9 @@ public partial class Product
     public virtual ICollection<Sale> Sales { get; set; } = new List<Sale>();
     
     public virtual ICollection<Tag> Tags { get; set; } = new List<Tag>();
+}
+public enum ProductType
+{
+    BASE_GAME,
+    DLC
 }

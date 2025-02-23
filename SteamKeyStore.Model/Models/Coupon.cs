@@ -1,6 +1,6 @@
 ﻿namespace SteamKeyStore.Model.Models;
 
-public partial class Coupon
+public class Coupon
 {
     public int Id { get; set; }
 

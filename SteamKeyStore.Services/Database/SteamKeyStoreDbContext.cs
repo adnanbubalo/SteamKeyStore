@@ -193,7 +193,8 @@ public partial class SteamKeyStoreDbContext : DbContext
             entity.Property(e => e.Title).HasMaxLength(200);
             entity.Property(e => e.Type)
                 .HasMaxLength(20)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasConversion<string>();
 
             entity.HasOne(d => d.Developer).WithMany(p => p.ProductDevelopers)
                 .HasForeignKey(d => d.DeveloperId)
@@ -319,7 +320,8 @@ public partial class SteamKeyStoreDbContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Role)
                 .HasMaxLength(10)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasConversion<string>();
             entity.Property(e => e.UserName).HasMaxLength(100);
         });
 

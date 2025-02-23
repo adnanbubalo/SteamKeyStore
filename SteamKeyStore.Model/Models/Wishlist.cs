@@ -1,6 +1,6 @@
 ﻿namespace SteamKeyStore.Model.Models;
 
-public partial class Wishlist
+public class Wishlist
 {
     public int Id { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace SteamKeyStore.Model.Models;
 
-public partial class Order
+public class Order
 {
     public int Id { get; set; }
 

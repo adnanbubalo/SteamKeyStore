@@ -1,6 +1,6 @@
 ﻿namespace SteamKeyStore.Model.Models;
 
-public partial class News
+public class News
 {
     public int Id { get; set; }
 
