@@ -1,28 +1,28 @@
 USE SteamKeyStoreDB;
 
 -- Insert into User table (Customers, Developers, Publishers, Admins)
-INSERT INTO [User] (UserName, Email, PasswordHash, Role)
+INSERT INTO [User] (UserName, Email, PasswordHash, PasswordSalt, Role)
 VALUES
 -- Customers
-('John Doe', 'john.doe@example.com', 'hash1', 'CUSTOMER'),
-('Jane Smith', 'jane.smith@example.com', 'hash2', 'CUSTOMER'),
-('Alice Johnson', 'alice.johnson@example.com', 'hash3', 'CUSTOMER'),
-('Bob Brown', 'bob.brown@example.com', 'hash4', 'CUSTOMER'),
-('Charlie Davis', 'charlie.davis@example.com', 'hash5', 'CUSTOMER'),
+('John Doe', 'john.doe@example.com', 'hash1', 'salt1', 'CUSTOMER'),
+('Jane Smith', 'jane.smith@example.com', 'hash2', 'salt2', 'CUSTOMER'),
+('Alice Johnson', 'alice.johnson@example.com', 'hash3', 'salt3', 'CUSTOMER'),
+('Bob Brown', 'bob.brown@example.com', 'hash4', 'salt4', 'CUSTOMER'),
+('Charlie Davis', 'charlie.davis@example.com', 'hash5', 'salt5', 'CUSTOMER'),
 -- Developers
-('CD Projekt Red', 'dev1@cdprojektred.com', 'hash6', 'CREATOR'),
-('Rockstar Games', 'dev2@rockstargames.com', 'hash7', 'CREATOR'),
-('Ubisoft Montreal', 'dev3@ubisoft.com', 'hash8', 'CREATOR'),
-('FromSoftware', 'dev4@fromsoftware.com', 'hash9', 'CREATOR'),
-('Larian Studios', 'dev5@larian.com', 'hash10', 'CREATOR'),
+('CD Projekt Red', 'dev1@cdprojektred.com', 'hash6', 'salt6', 'CREATOR'),
+('Rockstar Games', 'dev2@rockstargames.com', 'hash7', 'salt7', 'CREATOR'),
+('Ubisoft Montreal', 'dev3@ubisoft.com', 'hash8', 'salt8', 'CREATOR'),
+('FromSoftware', 'dev4@fromsoftware.com', 'hash9', 'salt9', 'CREATOR'),
+('Larian Studios', 'dev5@larian.com', 'hash10', 'salt10', 'CREATOR'),
 -- Publishers
-('CD Projekt Red', 'publisher1@cdprojektred.com', 'hash11', 'CREATOR'),
-('Rockstar Games', 'publisher2@rockstargames.com', 'hash12', 'CREATOR'),
-('Ubisoft', 'publisher3@ubisoft.com', 'hash13', 'CREATOR'),
-('Bandai Namco', 'publisher4@bandainamco.com', 'hash14', 'CREATOR'),
-('Larian Studios', 'publisher5@larian.com', 'hash15', 'CREATOR'),
+('CD Projekt Red', 'publisher1@cdprojektred.com', 'hash11', 'salt11', 'CREATOR'),
+('Rockstar Games', 'publisher2@rockstargames.com', 'hash12', 'salt12', 'CREATOR'),
+('Ubisoft', 'publisher3@ubisoft.com', 'hash13', 'salt13', 'CREATOR'),
+('Bandai Namco', 'publisher4@bandainamco.com', 'hash14', 'salt14', 'CREATOR'),
+('Larian Studios', 'publisher5@larian.com', 'hash15', 'salt15', 'CREATOR'),
 -- Admins
-('Admin User', 'admin@example.com', 'hash16', 'ADMIN');
+('Admin User', 'admin@example.com', 'hash16', 'salt16', 'ADMIN');
 
 -- Insert into Product table (Real-world games and DLCs)
 INSERT INTO Product (Type, Title, Description, SystemRequirements, DeveloperID, PublisherID, Price, ReleaseDate, MainImageURL, GameId)

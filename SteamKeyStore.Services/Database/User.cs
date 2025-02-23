@@ -13,11 +13,11 @@ public partial class User
 
     public string PasswordHash { get; set; } = null!;
 
+    public string PasswordSalt { get; set; } = null!;
+
     public string Role { get; set; } = null!;
 
     public DateTime? CreatedAt { get; set; }
-
-    public string PasswordSalt { get; set; } = null!;
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 

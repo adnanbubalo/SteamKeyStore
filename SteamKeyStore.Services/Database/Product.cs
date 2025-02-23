@@ -19,13 +19,13 @@ public partial class Product
 
     public int PublisherId { get; set; }
 
+    public int? GameId { get; set; }
+
     public decimal Price { get; set; }
 
     public DateOnly? ReleaseDate { get; set; }
 
     public string? MainImageUrl { get; set; }
-
-    public int? GameId { get; set; }
 
     public virtual User Developer { get; set; } = null!;
 
@@ -36,6 +36,8 @@ public partial class Product
     public virtual ICollection<Product> InverseGame { get; set; } = new List<Product>();
 
     public virtual ICollection<News> News { get; set; } = new List<News>();
+
+    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
     public virtual ICollection<ProductKey> ProductKeys { get; set; } = new List<ProductKey>();
 
