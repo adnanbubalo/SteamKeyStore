@@ -28,10 +28,10 @@ public partial class Product
     public string? MainImageUrl { get; set; }
 
     public virtual User Developer { get; set; } = null!;
+    public virtual User Publisher { get; set; } = null!;
+    public virtual Product? Game { get; set; }
 
     public virtual ICollection<Edition> Editions { get; set; } = new List<Edition>();
-
-    public virtual Product? Game { get; set; }
 
     public virtual ICollection<Product> InverseGame { get; set; } = new List<Product>();
 
@@ -41,7 +41,6 @@ public partial class Product
 
     public virtual ICollection<ProductKey> ProductKeys { get; set; } = new List<ProductKey>();
 
-    public virtual User Publisher { get; set; } = null!;
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 

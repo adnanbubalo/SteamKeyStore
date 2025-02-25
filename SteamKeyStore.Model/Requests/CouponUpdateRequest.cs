@@ -1,10 +1,10 @@
 ﻿namespace SteamKeyStore.Model.Requests
 {
-    public class CouponInsertRequest
+    public class CouponUpdateRequest
     {
-        public string Code { get; set; } = null!;
+        public string? Code { get; set; } = null!;
 
-        public decimal DiscountPercentage { get; set; }
+        public decimal? DiscountPercentage { get; set; }
 
         public DateTime? StartDate { get; set; }
 
